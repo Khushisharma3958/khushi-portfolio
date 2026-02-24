@@ -4,23 +4,38 @@ import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://khushi-portfolio.dev'),
-  title: 'Khushi Sharma | Data Analyst & Web Developer',
+  title: 'Khushi Sharma | Data Analyst & Web Developer Portfolio',
   description:
-    'Professional portfolio of Khushi Sharma, Data Analyst and Web Developer creating data-driven solutions and modern web applications.',
+    'Recruiter-ready portfolio of Khushi Sharma showcasing data analytics dashboards, business insights, SQL/Python projects, and modern web development work.',
   keywords: [
-    'Khushi Sharma',
-    'Data Analyst',
-    'Web Developer',
-    'Power BI',
-    'Next.js portfolio'
+    'Khushi Sharma portfolio',
+    'Data Analyst portfolio',
+    'Web Developer portfolio',
+    'Power BI projects',
+    'SQL and Python analytics',
+    'Next.js developer'
   ],
   openGraph: {
-    title: 'Khushi Sharma | Data Analyst & Web Developer',
+    title: 'Khushi Sharma | Data Analyst & Web Developer Portfolio',
     description:
-      'Explore projects, experience, and skills in analytics and web development.',
+      'Explore projects, case studies, dashboards, and recruiter-focused experience highlights.',
     url: 'https://khushi-portfolio.dev',
     siteName: 'Khushi Portfolio',
-    type: 'website'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Khushi Sharma portfolio preview'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Khushi Sharma | Data Analyst & Web Developer',
+    description: 'Professional portfolio with analytics dashboards and web development projects.',
+    images: ['/og-image.svg']
   },
   icons: {
     icon: '/favicon.svg'
@@ -31,6 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           {children}
         </ThemeProvider>
